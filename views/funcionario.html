@@ -1,0 +1,85 @@
+<header style="color:white;">
+            <md-toolbar layout="row" class="md-whiteframe-z1 md-primary md-hue-2">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
+                        <md-icon class="material-icons">group_work</md-icon>
+                    </md-button>
+                    <h1 flex layout-align="center center" style="color:white;">
+                        <span> Funcionarios </span>
+                    </h1>
+                </div>
+            </md-toolbar>
+        </header>
+
+<div layout="column" layout-padding ng-cloak>
+
+
+<md-content class="inputdemoErrors" layout-padding="">
+    <form name="mainForm" ng-submit="sendForm()" novalidate>
+
+      <md-input-container class="md-block">
+        <label>Nombre</label>
+        <input  required="" name="nombre" ng-model="pform.nombre">
+
+        <div ng-messages="mainForm.nombre.$error" ng-if="mainForm.nombre.$touched">
+          <div ng-messages-include="templates/messages.html"></div>
+        </div>
+
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Cargo</label>
+        <input  required="" name="cargo" ng-model="pform.cargo">
+
+        <div ng-messages="mainForm.cargo.$error" ng-if="mainForm.cargo.$touched">
+          <div ng-messages-include="templates/messages.html"></div>  
+        </div>
+
+      </md-input-container>
+
+      
+
+      <md-input-container class="md-block">
+        <label>Email</label>
+        <input required="" type="email" name="email" ng-model="pform.email" >
+
+        <div ng-messages="mainForm.email.$error" role="alert" ng-if="mainForm.email.$touched">
+          <div ng-message-exp="['required']">
+            Ingrese un correo electronico valido
+          </div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Telefono</label>
+        <input name="phone" ng-model="pform.phone">
+
+        <div ng-messages="mainForm.phone.$error">
+          <div ng-messages-include="templates/messages.html"></div>
+        </div>
+      </md-input-container>
+
+      <div layout-align="center center">
+    <md-button type="submit" class="md-raised md-primary">Enviar</md-button>
+    </div>
+
+    <p ng-show="showMsg">
+        Forma No valida
+        </p>
+
+    <p ng-show="formValid">
+        Forma OK
+        {{pform | json }}
+        </p>
+    </form>
+  </md-content>
+
+
+
+</div>
+
+
+
+   
+
+  
