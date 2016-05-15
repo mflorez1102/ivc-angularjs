@@ -13,7 +13,7 @@
             profCache = CacheFactory('profCache', {
                 maxAge: 60 * 60 * 1000, // 1 hour,
                 deleteOnExpire: 'aggressive',
-                storageMode: 'sessionStorage'
+                storageMode: 'localStorage'
             });
         }
 
