@@ -2,7 +2,7 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-05-15 23:24:06
+* @Last Modified time: 2016-05-15 23:29:35
 */
 
 (function() {
@@ -27,7 +27,7 @@ function CrearDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Depen
 
 function EditarDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Dependencia, ID) {
     $scope.dependencia = Dependencia.get({id_dependencia:ID});
-    $scope.pform = {'id':ID};
+    $scope.pform = {'id':ID,'entidadId':$scope.dependencia.entidadId};
 
     $scope.sendForm = function(){
         if($scope.mainForm.$valid){
