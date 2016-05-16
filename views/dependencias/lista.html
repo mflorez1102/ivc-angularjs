@@ -45,8 +45,8 @@
 									<td>{{item.entidad.nombre}}</td>
 									<td class="text-right">
 										<div class="btn-group">
-											<a class="btn-white btn btn-xs" href="">Editar</a>
-											<a class="btn-white btn btn-xs delete_item" href="">Eliminar</a>
+											<a class="btn-white btn btn-xs" ng-click="editar(item.id)">Editar</a>
+											<a class="btn-white btn btn-xs delete_item" ng-click="eliminar(item.id)">Eliminar</a>
 										</div>
 									</td>
 								</tr>

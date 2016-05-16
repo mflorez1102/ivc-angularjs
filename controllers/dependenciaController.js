@@ -2,7 +2,7 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-05-11 14:25:57
+* @Last Modified time: 2016-05-15 23:08:38
 */
 
 (function() {
@@ -25,6 +25,26 @@ function CrearDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Depen
     $scope.entidades = Entidad.query(); 
 };
 
+function EditarDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Dependencia, ID) {
+    $scope.dependencia = Dependencia.get({id_dependencia:ID});
+    $scope.pform = {'id':ID};
+
+    $scope.sendForm = function(){
+        if($scope.mainForm.$valid){
+            $object = Entidad.update($scope.pform, function(){
+                $uibModalInstance.close();
+                $state.go("dependencias.lista", null, {reload: true});
+            });         
+        }
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.entidades = Entidad.query();
+};
+
 var dependenciaController = function($scope, $log, $resource, $state, $uibModal, auth, Dependencia) {
     $log.info('---- dependenciaController ----- ');
 
@@ -33,6 +53,24 @@ var dependenciaController = function($scope, $log, $resource, $state, $uibModal,
             templateUrl: 'views/dependencias/modals/crear.html',
             controller: CrearDependenciaCtrl
         });
+    };
+
+    $scope.editar = function (id) {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'views/dependencias/modals/editar.html',
+            controller: EditarDependenciaCtrl,
+            resolve: {
+                ID: function () {
+                  return id;
+                }
+            }
+        });
+    };
+
+    $scope.eliminar = function (id) {
+        $response = Entidad.remove({'id_dependencia':id},function(){
+            $state.go("dependencias.lista", null, {reload: true});
+        });        
     };
 
     $scope.dependencias = Dependencia.query();
