@@ -2,7 +2,7 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-05-15 23:08:38
+* @Last Modified time: 2016-05-15 23:24:06
 */
 
 (function() {
@@ -68,7 +68,7 @@ var dependenciaController = function($scope, $log, $resource, $state, $uibModal,
     };
 
     $scope.eliminar = function (id) {
-        $response = Entidad.remove({'id_dependencia':id},function(){
+        $response = Dependencia.remove({'id_dependencia':id},function(){
             $state.go("dependencias.lista", null, {reload: true});
         });        
     };
