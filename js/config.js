@@ -121,7 +121,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 angular
     .module('ivcApp')
     .config(config)
-    .run(function($log, $rootScope, $location, auth, $state){
+    .run(function($log, $rootScope, $templateCache, $location, auth, $state){
         // mensaje en la consola
         $log.debug("App Cargada");
         
@@ -134,5 +134,15 @@ angular
                 $state.go('login');  
             if (!restrictedPage && auth.isLoggedIn())
                 $state.go('entidades.lista');
+            if (!restrictedPage && auth.isLoggedIn())
+                $state.go('establecimientos.lista');
         });
+
+        // disable cache
+        $rootScope.$on('$routeChangeStart', function(event, next, current) {
+        if (typeof(current) !== 'undefined'){
+                $templateCache.remove(current.templateUrl);
+            }
+        });
+
     });
