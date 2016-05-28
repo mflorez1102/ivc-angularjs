@@ -1,25 +1,26 @@
-<div class="middle-box text-center loginscreen  animated fadeInDown">
+<div class="middle-box text-center loginscreen  animated fadeInDown formulario">
     <div class="logo-name">
         <img src="img/LogoBogotamejor.png" alt="" class="img-responsive">
     </div>
-       
-    <form class="m-t login" role="form" name="mainForm" ng-submit="sendForm()" novalidate >
-        <div class="has-error">
-            <p class="help-block" ng-show="showMsg">Usuario o contraseña invalidos.</p>
-        </div>
+
+    <form class="m-t login" role="form" name="mainForm" ng-submit="sendForm()" novalidate>
         <div ng-class="(mainForm.email.$error)? 'form-group has-error' : 'form-group'">
-            <input type="email" class="form-control" placeholder="Usuario" required="" ng-model="pform.email" >
+            <input type="email" class="form-control" placeholder="Usuario" required="" ng-model="pform.email">
             <label class="usuario"></label>
-            <p ng-messages="mainForm.email.$error" ng-if="mainForm.email.$touched" class="help-block">Campo Requerido</p>     
+            <i class="bar"></i>
+            <p ng-messages="mainForm.email.$error" ng-if="mainForm.email.$touched" class="help-block">Campo Requerido</p>
         </div>
         <div ng-class="(mainForm.email.$error)? 'form-group has-error' : 'form-group'">
             <input type="password" class="form-control" placeholder="Contraseña" required="" ng-model="pform.password">
             <label class="pass"></label>
             <p ng-messages="mainForm.password.$error" ng-if="mainForm.password.$touched" class="help-block">Campo Requerido</p>
         </div>
+        <div class="has-error">
+            <p class="help-block" ng-show="showMsg">Usuario o contraseña invalidos.</p>
+        </div>
         <button type="submit" class="button block full-width m-b button--efecto">ingresar</button>
         <a ui-sref="forgot_password"><small>¿Olvidaste tu contraseña?</small></a>
-            <!--<p class="text-muted text-center"><small>Do not have an account?</small></p>
+        <!--<p class="text-muted text-center"><small>Do not have an account?</small></p>
             <a class="btn btn-sm btn-white btn-block" ui-sref="register">Create an account</a>-->
     </form>
 </div>

@@ -56,9 +56,19 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         url: "/establecimientos",
         templateUrl: "views/common/content.html",
     })
-    .state('establecimientos.lista', {
-        url: "/lista",
-        templateUrl: "views/establecimientos/lista.html",
+        .state('establecimientos.buscar', {
+        url: "/buscar",
+        templateUrl: "views/establecimientos/buscar.html",
+        controller: 'establecimientoController',
+    })
+    .state('establecimientos.formal', {
+        url: "/formal",
+        templateUrl: "views/establecimientos/formal.html",
+        controller: 'establecimientoController',
+    })
+    .state('establecimientos.noformal', {
+        url: "/noformal",
+        templateUrl: "views/establecimientos/noformal.html",
         controller: 'establecimientoController',
     })
     .state('visitas',{
@@ -105,7 +115,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         url: "/login",
         templateUrl: "views/login.html",
         controller: 'loginController',
-        data: { pageTitle: 'Login', specialClass: 'gray-bg' }
+        data: { pageTitle: 'Login', specialClass: 'login-page' }
     })
     .state('logout', {
         url: "/logout",
@@ -121,7 +131,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 angular
     .module('ivcApp')
     .config(config)
-    .run(function($log, $rootScope, $templateCache, $location, auth, $state){
+    .run(function($log, $rootScope, $templateCache, $location, auth, $state, defaultErrorMessageResolver){
         // mensaje en la consola
         $log.debug("App Cargada");
         
@@ -145,4 +155,13 @@ angular
             }
         });
 
-    });
+        // configurar mensajes de validacion
+
+        defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+
+                // mensajes
+                errorMessages['isReq'] = 'Este campo es requrido';
+                errorMessages['emailReq'] = 'Ingrese un correo electrónico válido';
+            });
+
+        });

@@ -1,63 +1,78 @@
-<div class="row wrapper border-bottom white-bg page-heading">
-	<div class="col-lg-9">
-		<h2>Lista de Entidades</h2>
-		<ol class="breadcrumb">
-			<li><a href="{{url_for('admin.index')}}">Inicio</a></li>
-			<li>Entidades</li>
-			<li class="active"><strong>Lista De Entidades</strong></li>
-		</ol>
-	</div>
+<div class="row wrapper page-heading">
+    <div class="col-lg-9">
+        <h2>Entidades</h2>
+    </div>
 </div>
-<div class="wrapper wrapper-content animated fadeInRight">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="ibox float-e-margins">
-				<div class="ibox-title">
-					<h5>Lista de Entidades</h5>
-				</div>
-				<div class="ibox-content">
-					<div class="row">
-						<div class="col-sm-5 m-b-xs">
-							<a class="btn btn-w-m btn-primary" ng-click="crear()">Agregar Entidad</a>
-						</div>
-						<div class="col-sm-3 col-sm-offset-4">
-							<div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
-							<button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
-						</div>
-					</div>
-					<br>
-					<div class="table-responsive">
-						<table class="table table-striped" id="tabla_productos">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Nombre</th>
-									<th>Descripción</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="item in entidades" content="item">
-									<td>{{item.id}}</td>
-									<td>{{item.nombre}}</td>
-									<td>{{item.descripcion}}</td>
-									<td class="text-right">
-										<div class="btn-group">
-											<a class="btn-white btn btn-xs" ng-click="editar(item.id)">Editar</a>
-											<a class="btn-white btn btn-xs delete_item" ng-click="eliminar(item.id)">Eliminar</a>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-4 col-lg-offset-4">
-			<div class="btn-group">
+<div class="wrapper wrapper-content">
+<!--
+<div class="wrapper wrapper-content animated fadeInUp">
+-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h3>Lista de Entidades</h3>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-5 col-md-4 col-lg-3">
+                            <a class="button-generic button--efecto" ng-click="crear()">Agregar Entidad</a>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-3 col-lg-3 col-lg-offset-6">
+                            <div class="input-group">
+                              <input type="text" placeholder="Buscar" class="input-sm form-control" ng-model="search.nombre"> 
+                                <span class="input-group-btn">
+							
+							<button type="button" class="btn btn-lg button--efecto"><i class="fa fa-search" aria-hidden="true"></i>
+							</button> </span></div>
+                        </div>
+                    </div>
+
+					<div class="spinner"
+                         ng-show="isLoading" >
+                         <span us-spinner="{radius:8, width:5, length: 3, lines:9}" ></span >
+
+                         <p> Loading...</p >
+                    </div >
+
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="tabla_productos">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in entidades | filter : search" 
+                                content="item">
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.descripcion}}</td>
+                                    <td class="text-center">
+                                        <div class="botones">
+                                            <button type="button" ng-click="editar(item)" class="btn boton-editar" aria-label="Left Align">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" ng-click="eliminarModal()" class="btn boton-eliminar" aria-label="Left Align">
+                                                <i class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></i>
+                                            </button>
+                                            <!--<a class="btn-white btn btn-xs" ng-click="editar(item.id)">Editar</a>
+											<a class="btn-white btn btn-xs delete_item" ng-click="eliminarModal()">Eliminar</a>-->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="btn-group">
                 <a href="" type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></a>
                 <a href="" class="btn btn-white">1</a>
                 <a href="" class="btn btn-white">2</a>
@@ -66,6 +81,6 @@
                 <a href="" class="btn btn-white">5</a>
                 <a href="" type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i></a>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

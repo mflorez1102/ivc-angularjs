@@ -1,74 +1,64 @@
 @font-face {
     font-family: 'DINBold';
     src: url('../fonts/din-bold-webfont.eot');
-    src: url('../fonts/din-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/din-bold-webfont.woff') format('woff'),
-         url('../fonts/din-bold-webfont.ttf') format('truetype'),
-         url('../fonts/din-bold-webfont.svg#DINBold') format('svg');
+    src: url('../fonts/din-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/din-bold-webfont.woff') format('woff'), url('../fonts/din-bold-webfont.ttf') format('truetype'), url('../fonts/din-bold-webfont.svg#DINBold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
     font-family: 'DINLight';
     src: url('../fonts/din-light-webfont.eot');
-    src: url('../fonts/din-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/din-light-webfont.woff') format('woff'),
-         url('../fonts/din-light-webfont.ttf') format('truetype'),
-         url('../fonts/din-light-webfont.svg#DINLight') format('svg');
+    src: url('../fonts/din-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/din-light-webfont.woff') format('woff'), url('../fonts/din-light-webfont.ttf') format('truetype'), url('../fonts/din-light-webfont.svg#DINLight') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
-@font-face { 
+@font-face {
     font-family: 'DINRegular';
     src: url('../fonts/din-regular-webfont.eot');
-    src: url('../fonts/din-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/din-regular-webfont.woff') format('woff'),
-         url('../fonts/din-regular-webfont.ttf') format('truetype'),
-         url('../fonts/din-regular-webfont.svg#DINRegular') format('svg');
+    src: url('../fonts/din-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/din-regular-webfont.woff') format('woff'), url('../fonts/din-regular-webfont.ttf') format('truetype'), url('../fonts/din-regular-webfont.svg#DINRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
     font-family: 'DINBlack';
     src: url('../fonts/din-black-webfont.eot');
-    src: url('../fonts/din-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/din-black-webfont.woff') format('woff'),
-         url('../fonts/din-black-webfont.ttf') format('truetype'),
-         url('../fonts/din-black-webfont.svg#DINBlack') format('svg');
+    src: url('../fonts/din-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/din-black-webfont.woff') format('woff'), url('../fonts/din-black-webfont.ttf') format('truetype'), url('../fonts/din-black-webfont.svg#DINBlack') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
-.login-page{
+body {
+    font-family: 'DINRegular';
+}
+
+.login-page,
+.white-page {
     background-image: url(../img/bg.png);
     background-size: cover;
-    background-position:left center;
-    background-attachment:fixed;
-    
-    
+    background-position: left center;
+    background-attachment: fixed;
 }
+
 .login {
     margin-top: 50px;
 }
-.login input{
+
+.login input {
     font-family: 'DINRegular';
     height: 45px;
     border: none;
     padding-left: 50px;
     font-size: 1.5em;
 }
-.login .form-group{
+
+.login .form-group {
     position: relative;
 }
 
-.logo-name img{
+.logo-name img {
     margin-top: 20vh;
 }
 
@@ -88,26 +78,26 @@
     -webkit-transition: 0.8s ease all;
 }
 
-.login label.usuario{
+.login label.usuario {
     background-image: url(../img/usuario.svg);
-    
 }
-.login .pass{
+
+.login .pass {
     background-image: url(../img/password.svg);
 }
 
-.login input:focus ~ label.usuario{
+.login input:focus ~ label.usuario {
     background: #2DA4DF;
     background-image: url(../img/usuario.svg);
-    
 }
-.login input:focus ~ label.pass{
+
+.login input:focus ~ label.pass {
     background: #2DA4DF;
     background-image: url(../img/password.svg);
-    
 }
-.login button{
-    margin-top: 30px;
+
+.login button {
+    margin-top: 50px;
     text-transform: uppercase;
     font-family: 'DINBold';
     font-size: 1.5em;
@@ -119,68 +109,942 @@
     color: #fff;
 }
 
+.has-error {
+    margin-top: -15px;
+    position: absolute;
+    width: 100%;
+}
+
+.has-error p {
+    color: #fff!important;
+    background: #E74C3C;
+    height: 35px;
+    margin-top: 0px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset!important;
+}
 
 
 /* boton con efecto */
+
 .button--efecto {
-	-webkit-transition: border-color 0.4s, color 0.4s;
-	transition: border-color 0.4s, color 0.4s;
+    -webkit-transition: border-color 0.4s, color 0.4s;
+    transition: border-color 0.4s, color 0.4s;
+    background: #2DA4DF;
+    color: #fff
 }
+
 .button--efecto::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #156FAF;
-	z-index: -1;
-	opacity: 0;
-	-webkit-transform: scale3d(0.7, 1, 1);
-	transform: scale3d(0.7, 1, 1);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	transition: transform 0.4s, opacity 0.4s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #156FAF;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .button--efecto,
 .button--efecto::before {
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
+
 .button--efecto:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .button--efecto:hover::before {
-	opacity: 1;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.button-generic {
+    float: left;
+    display: block;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 13px 0;
+    text-transform: uppercase;
 }
 
 .button {
-	float: left;
-	display: block;
-	border: none;
-	color: inherit;
-	vertical-align: middle;
-	position: relative;
-	z-index: 1;
+    float: left;
+    display: block;
+    border: none;
+    color: inherit;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    height: 45px;
 }
 
 .button:focus {
-	outline: none;
+    outline: none;
 }
 
 .button > span {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
-#wrapper{
-    background: #233646;
-}
-
-/*.nav-header{
+#wrapper {
     background: #2DA4DF;
-}*/
+    background-image: url(../img/bg-textura.png);
+    background-size: cover;
+    background-position: left center;
+    background-attachment: fixed;
+}
+
+.navbar-fixed-top,
+.navbar-static-top {
+    background: #414A52;
+    background-image: url(../img/bg-textura.png);
+    background-size: cover;
+    background-position: left center;
+    background-attachment: fixed;
+}
+
+.toggle-menu {
+    padding: 4px 12px;
+    margin: 14px 5px 5px 20px;
+    font-size: 21px;
+    float: left;
+    -moz-transform: scaleX(1.2);
+    -webkit-transform: scaleX(1.2);
+    -o-transform: scaleX(1.2);
+    -ms-transform: scaleX(1.2);
+    transform: scaleX(1.5);
+}
+
+.toggle-menu i {
+    color: #fff;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+.toggle-menu i:hover {
+    color: #2DA4DF;
+}
+
+.nav-header {
+    padding-bottom: 18px;
+    padding-top: 25px;
+}
+
+.nav-header img {
+    margin-bottom: 12px;
+}
+
+.nav-header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.nav-header .text-muted,
+.nav-header a {
+    color: #fff;
+}
+
+.nav {
+    font-family: 'DINRegular';
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0px;
+    display: none;
+    font-size: 12px;
+    left: 0;
+    list-style: none outside none;
+    padding: 0;
+    position: absolute;
+    text-shadow: none;
+    top: 100%;
+    z-index: 1000;
+    background: #fff;
+}
+
+.navbar-default .nav > li.active {
+    border: none;
+}
+
+.navbar-default .nav > li:nth-child(1) {
+    -webkit-animation-delay: 0.1s;
+    -o-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    z-index: 10000;
+}
+
+.navbar-default .nav > li:nth-child(2) {
+    -webkit-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.navbar-default .nav > li:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.navbar-default .nav > li:nth-child(4) {
+    -webkit-animation-delay: 0.7s;
+    -o-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.navbar-default .nav > li:nth-child(5) {
+    -webkit-animation-delay: 0.8s;
+    -o-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.navbar-default .nav > li:nth-child(6) {
+    -webkit-animation-delay: 0.9s;
+    -o-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+
+.navbar-default .nav > li:nth-child(7) {
+    -webkit-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.navbar-default .nav > li:nth-child(8) {
+    -webkit-animation-delay: 1.1s;
+    -o-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+}
+
+.navbar-default .nav > li:nth-child(9) {
+    -webkit-animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+
+.navbar-default .nav > li:nth-child(10) {
+    -webkit-animation-delay: 1.3s;
+    -o-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+}
+
+.navbar-default .nav > li:nth-child(11) {
+    -webkit-animation-delay: 1.4s;
+    -o-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+
+.navbar-default .nav > li:nth-child(12) {
+    -webkit-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.navbar-default .nav > li > a > i {
+    width: 70px;
+    height: 70px;
+    background: #2B98D5;
+    text-align: center;
+    font-size: 30px;
+    padding: 22px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar-default .nav > li.active > a > i {
+    background: #2386be;
+}
+
+.navbar-default .nav > li > a:hover > i,
+.navbar-default .nav > li > a:focus > i {
+    background: #2386be;
+}
+
+.navbar-default .nav > li > a {
+    width: 100%;
+    padding: 0;
+    border-top: 1px solid #168ac4;
+    font-weight: 100;
+    color: #fff;
+    text-align: left;
+    height: 70px;
+}
+
+.navbar-default .nav > li:last-child > a {
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid #168ac4;
+}
+
+.navbar-default .nav-label {
+    padding-top: 28px;
+    padding-left: 3px;
+    position: absolute;
+    height: 70px;
+    left: 70px;
+}
+.nav-second-level li:last-child {
+    margin-bottom: 0px;
+    border: none!important;
+    
+}
+.mini-navbar .nav-second-level {
+    position: absolute;
+    left: 70px!important;
+    background-color: #2DA4DF;
+    padding: 0px;
+    font-size: 14px;
+    width: 200px;
+}
+.nav-second-level {
+    width: 100%;
+}
+.nav-second-level a{
+    height: 35px!important;
+}
+.nav-second-level a i{
+    height: 34px!important;
+    font-size: 14px!important;
+    padding: 9px 0px!important;
+    background: #2286BE!important;
+}
+.sub-nav-label{
+    padding: 5px ;
+    border-left: 70px solid #168ac4;
+}
+
+.navbar-default .nav > li > a .glyphicon {
+    float: right;
+    margin-right: 10px;
+    line-height: 5.5;
+}
+.navbar-default .nav > li.active > a .glyphicon {
+    line-height: 5.4;
+}
+
+.navbar-default .nav > li.active .nav-label {
+    padding-top: 24px;
+}
+
+.navbar-default .nav > li.active a {
+    background: #2B98D5;
+    font-size: 15px;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+    background: #2B98D5;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+.wrapper {
+    -webkit-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-duration: 2s;
+    -o-animation-duration:2s ;
+    animation-duration:2s ;
+}
+
+#page-wrapper {
+    border-left: 1px solid #168ac4;
+    overflow: hidden;
+    
+    
+}
+
+.boton-salir {
+    display: block;
+    border: none;
+    color: inherit;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    width: 150px;
+    height: 62px;
+    left: 25px;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .boton-salir {
+        left: -15px;
+    }
+    .navbar-right {
+        margin-right: -15px;
+        float: right;
+    }
+    .nav.navbar-top-links li.dropdown {
+        left: -12px!important;
+    }
+}
+
+@media (max-width: 785px) {
+    .boton-salir {
+        left: -15px;
+    }
+}
+
+.nav.navbar-top-links li.dropdown {
+    background: #2B98D5;
+    width: 62px;
+    height: 62px;
+    position: relative;
+    left: 28px;
+}
+
+.navbar-right {
+    margin-right: -15px;
+}
+
+.nav.navbar-right > li > a {
+    color: #fff;
+    font-size: 30px;
+    padding: 5px 0 0 0!important;
+}
+
+.nav.navbar-right > li > a i {
+    margin-right: 6px;
+    position: relative;
+    top: 10px;
+    left: 15px;
+}
+
+.label-blanco {
+    background: #fff;
+    color: #2B98D5;
+}
+
+
+/*
+**************************
+paginas
+**************************
+*/
+
+#page-wrapper{
+    
+}
+.page-heading::after {
+	left: 50%;
+	width: 35px;
+	height: 35px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+    position: relative;
+    border-right: 1px solid #2DA4DF;
+    border-bottom: 1px solid #2DA4DF;
+}
+
+
+.page-heading::after {
+	bottom: 0px;
+	z-index: 0;
+	background: #fff;
+}
+.page-heading {
+    height: 95px;
+    border-bottom: 1px solid #2DA4DF!important;
+    font-family: 'DINLight';
+    color: #2DA4DF;
+    padding: 9px 10px 20px 10px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    position: relative;
+}
+
+.page-heading h2 {
+    font-size: 35px;
+}
+
+.ibox-title {
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    color: #2DA4DF
+}
+
+.ibox-title h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.ibox-content {
+    background: rgba(255, 255, 255, 0);
+}
+
+.box{
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid #ccc;
+    /*height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;*/
+}
+
+
+/*
+**************************
+tablas
+**************************
+*/
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #2DA4DF;
+}
+
+.table thead tr {
+    background: #fff;
+    border: 1px solid #2DA4DF;
+}
+
+.table thead tr th {
+    font-size: 23px;
+    font-weight: 100;
+    color: #2DA4DF;
+    line-height: 33px;
+}
+
+.table tbody tr {
+    background: #fff;
+}
+
+.table tbody tr td {
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 45px;
+    border: 1px solid #ccc;
+    padding:  3px 8px;
+}
+
+.table button{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin: 0 15px;
+    margin-top: 5px;
+    color: #fff;
+    padding: 5px 0px;
+    -webkit-transition: all 300ms ease-out;
+-moz-transition: all 300ms ease-out;
+-ms-transition: all 300ms ease-out;
+-o-transition: all 300ms ease-out;
+transition: all 300ms ease-out;
+}
+.table button i{
+    font-size: 18px;
+}
+.table button:focus {
+    color: #fff;
+    -moz-transform: scale(1);
+-webkit-transform: scale(1);
+-o-transform: scale(1);
+-ms-transform: scale(1);
+transform: scale(1);
+}
+.table button:hover {
+    color: #fff;
+    -moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+}
+.table button.boton-editar{
+    background: #F9B32F;
+    box-shadow: 0 0 0 5px rgba(249, 179, 47, 0.5);   
+}
+.table button.boton-eliminar{
+    background: #C44132;
+    box-shadow: 0 0 0 5px rgba(196, 65, 50, 0.50);
+}
+
+.table button.boton-editar:hover{
+    background: #E67E22;
+    box-shadow: 0 0 0 5px rgba(230, 126, 34, 0.5);   
+}
+.table button.boton-eliminar:hover{
+    background: #A70C00;
+    box-shadow: 0 0 0 5px rgba(167, 12, 0, 0.50);
+}
+
+/*
+**************************
+modal eliminar datos
+**************************
+*/
+.eliminar-dato .modal-header {
+    background: #C44132;
+    background-image: url(../img/texture-modal-header.png);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'DINLight';
+    padding: 10px 0;
+    border: none;
+}
+.eliminar-dato .modal-header .modal-icon {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.eliminar-dato .button{
+    font-size: 20px;
+}
+.eliminar-dato .button--efecto {
+    -webkit-transition: border-color 0.4s, color 0.4s;
+    transition: border-color 0.4s, color 0.4s;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.eliminar-dato .button--efecto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(183, 28, 12, 0.5);
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.eliminar-dato .button--efecto,
+.eliminar-dato .button--efecto::before {
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+.eliminar-dato .button--efecto:hover::before {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/*
+**************************
+modal formulario
+**************************
+*/
+
+.input-sm {
+    height: 50px;
+    font-size: 20px;
+}
+
+.btn-lg {
+    height: 50px;
+}
+
+.formulario h2{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.formulario h2:first-child{
+    margin-top: 20px;
+    
+}
+.formulario, .eliminar-dato {
+    border-radius: 0px;
+}
+
+
+.formulario .modal-header {
+    background: #2DA4DF;
+    background-image: url(../img/texture-modal-header.png);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'DINLight';
+    padding: 10px 0;
+}
+
+.formulario .modal-header button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #2386be;
+    border: none;
+    font-size: 25px;
+}
+
+.formulario .modal-header button i {
+    -webkit-transition: all 300ms ease-in;
+    -moz-transition: all 300ms ease-in;
+    -ms-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;
+}
+
+.formulario .modal-header button:hover i {
+    -moz-transform: scale(1.2) rotate(180deg);
+    -webkit-transform: scale(1.2) rotate(180deg);
+    -o-transform: scale(1.2) rotate(180deg);
+    -ms-transform: scale(1.2) rotate(180deg);
+    transform: scale(1.2) rotate(180deg);
+}
+
+.formulario .modal-header h4 {
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.formulario .modal-header .modal-icon {
+    color: #fff;
+    width: 100%;
+}
+
+.formulario .modal-body {
+    padding-top: 20px;
+    background: #f7f7f7;
+}
+
+.formulario .form-radio,
+.formulario .form-group {
+    position: relative;
+    font-family: 'DINRegular';
+    margin-top: 10px;
+}
+
+.formulario .form-group input {
+    height: 40px;
+    margin-top: 10px;
+    background: fff!important;
+}
+
+.formulario .form-group select {
+    width: 100%;
+    font-size: 1.5em;
+    height: 45px;
+    background: none;
+    border: none;
+    line-height: 1.6;
+    box-shadow: none;
+    background: #fff;
+    padding-left: 10px;
+}
+
+.formulario .form-group select option {
+    
+}
+
+.formulario .form-group .control-label {
+    position: absolute;
+    top: 0.4em;
+    left: .5em;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    color: #b3b3b3;
+    font-size: 20px;
+    width: 95%;
+    font-weight: normal;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    text-overflow:ellipsis;
+  white-space:nowrap; 
+  overflow:hidden;
+}
+.formulario .form-group .control-label-date {
+    position: absolute;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    font-size: 1em;
+    color: gray;
+    top: -16px;
+    left: 10px;
+    font-weight: normal;
+    text-overflow:ellipsis;
+  white-space:nowrap; 
+  overflow:hidden;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+}
+
+.formulario .form-group .bar {
+    position: relative;
+    border-bottom: 0.0625rem solid #fff;
+    display: block;
+}
+
+.formulario .form-group .bar::before {
+    content: '';
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: #337ab7;
+    -webkit-transition: left 0.28s ease, width 0.28s ease;
+    transition: left 0.28s ease, width 0.28s ease;
+    z-index: 2;
+}
+
+.formulario .form-group input,
+.formulario .form-group textarea {
+    display: block;
+    background: #fff;
+    font-size: 1.5em;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    box-shadow: none;
+    height: 45px;
+    border: 0px solid #2DA4DF
+}
+
+.formulario .form-group select,
+.formulario .form-group input:focus,
+.formulario .form-group input:valid,
+.formulario .form-group input.form-file,
+.formulario .form-group input.has-value,
+.formulario .form-group textarea:focus,
+.formulario .form-group textarea:valid,
+.formulario .form-group textarea.form-file,
+.formulario .form-group textarea.has-value {
+    color: #000;
+}
+
+.formulario .form-group select ~ .control-label,
+.formulario .form-group input:focus ~ .control-label,
+.formulario .form-group input:valid ~ .control-label,
+.formulario .form-group input:focus ~ .control-label-date,
+.formulario .form-group input:valid ~ .control-label-date,
+.formulario .form-group input.form-file ~ .control-label,
+.formulario .form-group input.has-value ~ .control-label,
+.formulario .form-group textarea:focus ~ .control-label,
+.formulario .form-group textarea:valid ~ .control-label,
+.formulario .form-group textarea.form-file ~ .control-label,
+.formulario .form-group textarea.has-value ~ .control-label {
+    font-size: 1em;
+    color: gray;
+    top: -16px;
+    left: 10px;
+}
+
+.formulario .form-group select:focus,
+.formulario .form-group input:focus,
+.formulario .form-group textarea:focus {
+    outline: none;
+}
+
+.formulario .form-group input:focus ~ .control-label,
+.formulario .form-group input:focus ~ .control-label-date,
+.formulario .form-group select:focus ~ .control-label,
+.formulario .form-group textarea:focus ~ .control-label {
+    color: #337ab7;
+}
+
+.formulario .form-group select:focus ~ .bar::before,
+.formulario .form-group input:focus ~ .bar::before,
+.formulario .input-group input:focus ~ .bar::before,
+.formulario .form-group textarea:focus ~ .bar::before {
+    width: 100%;
+    left: 0;
+}
+
+.formulario .button {
+    height: 45px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+/*
+**************************
+paginación 
+**************************
+*/
+.col-lg-4{
+}
+.btn-group {
+    left: 50%;
+    margin-left: -157px;
+    
+    
+    
+}
+.btn-group .btn{
+    width: 45px;
+    height: 45px;
+    padding: 12px;
+}
+.btn-group .btn-white{
+   border: 1px solid #2DA4DF
+}
+.btn-group .btn-white.active, 
+.btn-group .btn-white:first-child,
+.btn-group .btn-white:last-child{
+   background: #2DA4DF;
+    box-shadow: none;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+}
+.btn-group .btn-white.active{
+    -moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+    z-index: 6;
+}
+.btn-group .btn-white:hover{
+    border: none;
+    background: #2386be;
+    color: #fff;
+}

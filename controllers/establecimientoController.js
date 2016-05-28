@@ -7,14 +7,36 @@
 
 (function() {
 
+modalController = function  ($scope, $uibModalInstance, $state, Entidad) {
+    
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+};
+
 // Define controller function
-var establecimientoController = function($scope, $log, $resources, auth) {
+var establecimientoController = function($scope, $state, $log, $uibModal, auth) {
 
     $log.info('---- establecimientoController ----- ');
 
-    var establecimiento = $resource('http://localhost:3000/api/Establecimientos');
+    $log.info('---- entidadController ----- ');
 
-    $scope.establecimiento = establecimiento.query({access_token:auth.getToken()});
+   $scope.abrir = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'views/establecimientos/modals/crear.html',
+            controller: modalController,
+        });
+    };
+    // -- bloque modal
+    $scope.modal2 = function () {
+        var modalInstance = $uibModal.open({
+        	// cambiar nombre del template
+            templateUrl: 'views/establecimientos/modals/crear.html',
+            controller: modalController,
+        });
+    };
+
+    // --
    	
 };
 

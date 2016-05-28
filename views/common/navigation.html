@@ -1,38 +1,82 @@
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul side-navigation class="nav metismenu" id="side-menu">
-            <li class="nav-header">
-
-                <div class="profile-element" uib-dropdown>
-                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
-                    <a uib-dropdown-toggle href>
-                            <span class="clear">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">Eduardo Saldaña</strong>
-                             </span>
-                                <span class="text-muted text-xs block">Funcionario<b class="caret"></b></span>
-                            </span>
+            <li class="nav-header animated fadeInDown">
+                <div class="profile-element" uib-dropdown> <img alt="image" class="img-responsive" src="img/logo-ivc-blanco.png" />
+                    <a uib-dropdown-toggle href> <span class="clear"> 
+                    <span class="block m-t-xs text-center"> 
+                        <h1 >Eduardo Saldaña</h1> 
+                    </span>
+                        <span class="text-xs block text-center">
+                        Funcionario<b class="caret"></b></span> </span>
                     </a>
-                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                    <ul uib-dropdown-menu class="animated bounceIn m-t-xs">
                         <li><a ui-sref="app.profile">Perfil</a></li>
                         <li><a ui-sref="app.contacts">Visitas</a></li>
-                        
                         <li class="divider"></li>
                         <li><a ui-sref="logout">Cerrar sesión</a></li>
                     </ul>
                 </div>
-                <div class="logo-element">
-                    IVC
-                </div>
+                <div class="logo-element"> IVC </div>
             </li>
-            <li ui-sref-active="active"><a ui-sref="entidades.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Entidades</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="dependencias.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Dependencias</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="funcionarios.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Funcionarios</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="establecimientos.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Establecimientos</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="visitas.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Visitas</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="alarmas.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Alarmas</span> </a></li>
-            <li ui-sref-active="active"><a ui-sref="checklist.lista"><i class="fa fa-th-large"></i> <span class="nav-label">Checklist</span> </a></li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="entidades.lista">
+                    <i class="fa fa-university"></i>
+                    <div class="nav-label">Entidades</div>
+                </a>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="dependencias.lista">
+                    <i class="fa fa-bookmark-o"></i>
+                    <div class="nav-label">Dependencias</div>
+                </a>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="funcionarios.lista"><i class="fa fa-users">
+                
+            </i> <div class="nav-label">Funcionarios</div> 
+            </a>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a href=""><i class="fa fa-building-o"></i> 
+                <div class="nav-label">Establecimientos</div><span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li ui-sref-active="active">
+                        <a ui-sref="establecimientos.buscar">
+                            <i class="fa fa-search"></i>
+                            <div class="sub-nav-label">Buscar</div>
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="establecimientos.formal">
+                            <i class="fa fa-search"></i>
+                            <div class="sub-nav-label">Agrega formal</div> 
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="establecimientos.noformal">
+                            <i class="fa fa-search"></i>
+                            <div class="sub-nav-label">Agrega no formal</div> 
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="visitas.lista">
+                    <i class="fa fa-calendar-plus-o"></i>
+                    <div class="nav-label">Visitas</div>
+                </a>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="alarmas.lista"><i class="fa fa-bell-o "></i> 
+            <div class="nav-label">Alarmas</div> 
+            </a>
+            </li>
+            <li class="animated fadeInLeft" ui-sref-active="active">
+                <a ui-sref="checklist.lista">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    <div class="nav-label">Checklist</div> </a>
+            </li>
         </ul>
-
     </div>
 </nav>

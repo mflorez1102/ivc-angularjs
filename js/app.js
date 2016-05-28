@@ -12,8 +12,12 @@
         'ngSanitize',                    // ngSanitize
         'ngMessages',
         'ngResource',
-        'angular-cache'
-    ])
+        'angular-cache',
+        'angularSpinner',
+        'angular-ladda',
+        'jcs-autoValidate'
+
+    ]);
 })();
 
 // Other libraries are loaded dynamically in the config.js file using the library ocLazyLoad

@@ -1,29 +1,40 @@
-<div class="inmodal">
+<div class="inmodal formulario">
 	<form name="mainForm" ng-submit="sendForm()" novalidate>
 	    <div class="modal-header">
-	        <i class="fa fa-laptop modal-icon"></i>
+        <button type="button" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><i class="fa fa-times" aria-hidden="true"></i></button>
 	        <h4 class="modal-title">Editar Dependencia</h4>
 	        <small class="font-bold">Edita los datos de la dependencia.</small>
+	        <i class="fa fa-bookmark-o modal-icon"></i>
 	    </div>
 	    <div class="modal-body">
-	        <div class="form-group">
-	        	<label>Nombre</label>
-	        	<input type="text" name="nombre" ng-model="pform.nombre" class="form-control" ng-value="dependencia.nombre">
+        <div class="row">
+            <div class="form-group">
+	        	<input type="text" name="nombre" ng-model="pform.nombre" class="form-control" ng-value="dependencia.nombre" required="required">
+	        	<label class="control-label">Nombre:</label>
+	        	<div class="bar"></div>
 	        </div>
-	        <div class="form-group">
-	        	<label>Descripción</label>
-	        	<input type="text" name="descripcion" ng-model="pform.descripcion" class="form-control" ng-value="dependencia.descripcion">
+        </div>
+        <div class="row">
+            <div class="form-group">
+	        	<input type="text" name="descripcion" ng-model="pform.descripcion" class="form-control" ng-value="dependencia.descripcion" required="required">
+	        	<label class="control-label">Descripción:</label>
+	        	<div class="bar"></div>
 	        </div>
-	        <div class="form-group">
-	        	<label class="col-sm-2 control-label">Entidad</label>
-                <select class="form-control m-b" name="entidadId" ng-model="pform.entidadId" >
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <select class="form-control" name="entidadId" ng-model="pform.entidadId" required="required">
                     <option ng-value="opt.id" ng-repeat="opt in entidades" ng-selected="opt.id == dependencia.entidadId">{{ opt.nombre }}</option>
                 </select>
+                <label class="control-label">Entidad:</label>
+                <div class="bar"></div>
             </div>
-	    </div>
-	    <div class="modal-footer">
-	        <button type="button" class="btn btn-white" ng-click="cancel()">Cerrar</button>
-	        <input type="submit" class="btn btn-primary" value="Editar" />
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" >
+                   <button type="submit" class="button full-width button--efecto">Editar</button>
+               </div>
+        </div> 
 	    </div>
     </form>
 </div>

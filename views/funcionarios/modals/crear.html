@@ -1,23 +1,124 @@
-<div class="inmodal">
-	<form name="mainForm" ng-submit="sendForm()" novalidate>
-	    <div class="modal-header">
-	        <i class="fa fa-laptop modal-icon"></i>
-	        <h4 class="modal-title">Crear Entidad</h4>
-	        <small class="font-bold">Llena los siguientes datos para crear la nueva entidad.</small>
-	    </div>
-	    <div class="modal-body">
-	        <div class="form-group">
-	        	<label>Nombre</label>
-	        	<input type="text" name="nombre" ng-model="pform.nombre" class="form-control" placeholder="Nombre">
-	        </div>
-	        <div class="form-group">
-	        	<label>Descripción</label>
-	        	<input type="text" name="descripcion" ng-model="pform.descripcion" class="form-control" placeholder="Descripción">
-	        </div>
-	    </div>
-	    <div class="modal-footer">
-	        <button type="button" class="btn btn-white" ng-click="cancel()">Cerrar</button>
-	        <input type="submit" class="btn btn-primary" value="Crear" />
-	    </div>
+<div class="inmodal formulario">
+    <form name="mainForm" ng-submit="sendForm()" novalidate>
+        <div class="modal-header">
+           <button type="button" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <h4 class="modal-title">Agregar Funcionario</h4>
+            <p>Llena los siguientes datos para agregar a un nuevo funcionario.</p>
+            <i class="fa fa-user modal-icon"></i>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="nombre" ng-model="nombre" class="form-control" required="required">
+                        <label class="control-label">Nombre:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="apellido" class="form-control" required="required">
+                        <label class="control-label">Apellido:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="email" class="form-control" required="required">
+                        <label class="control-label">E-mail:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                       <select>
+                        <option value="1" selected>uno</option>
+                        <option value="2">dos</option>
+                        <option value="3">tres</option>
+                        <option value="4">cuatro</option>
+                        <option value="2">cinco</option>
+                        </select>
+                        <label class="control-label">Entidad:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                       <select>
+                        <option value="1" selected>uno</option>
+                        <option value="2">dos</option>
+                        <option value="3">tres</option>
+                        <option value="4">cuatro</option>
+                        <option value="2">cinco</option>
+                        </select>
+                        <label class="control-label">Dependencia:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                   <div class="form-group">
+                       <select>
+                        <option value="1" selected>uno</option>
+                        <option value="2">dos</option>
+                        <option value="3">tres</option>
+                        <option value="4">cuatro</option>
+                        <option value="2">cinco</option>
+                        </select>
+                        <label class="control-label">Tipo de documento:</label>
+                        <i class="bar"></i>
+                   </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="documento_identidad" class="form-control" required="required">
+                        <label class="control-label">No. documento:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                       <select>
+                        <option value="1" selected>uno</option>
+                        <option value="2">dos</option>
+                        <option value="3">tres</option>
+                        <option value="4">cuatro</option>
+                        <option value="2">cinco</option>
+                        </select>
+                        <label class="control-label">Cargo:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="telefono_personal" class="form-control" required="required">
+                        <label class="control-label">Numero de celular:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="telefono_oficina" class="form-control" required="required">
+                        <label class="control-label">Teléfono Oficina:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6 col-md-offset-3" >
+                   <button type="submit" class="button full-width  button--efecto">Agregar</button>
+               </div>
+                
+            </div>
+        </div>
+        
     </form>
 </div>

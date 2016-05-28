@@ -1,0 +1,339 @@
+<div class="row wrapper page-heading">
+    <div class="col-lg-9">
+        <h2>Establecimientos</h2>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInUp">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h3>Agregar establecimiento formal</h3>
+                </div>
+                <div class="ibox-content box">
+                    <!--formulario -->
+                    <div class="formulario">
+                        <form action="">
+                            <h2>Datos basicos</h2>
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.TipoIdent" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Tipo de Identificación:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.NoIdent" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Numero de identificación:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.IdentDV" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Identificación DV :</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.Matricula" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Matricula:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" ng-model="pform.FechaMatric" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label-date">Fecha matricula:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" ng-model="pform.FechaFinMatric">
+                                        <label class="control-label-date">Fecha de finalización de la matricula:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <!--formulario row 1 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="pform.Observac" class="form-control" required="required">
+                                        <label class="control-label">Observaciones:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--formulario row 1 -->
+                            <!--formulario row 2 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="pform.NomComerc" class="form-control" required="required">
+                                        <label class="control-label">Nombre Comercial:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="pform.DirComerc" class="form-control" required="required">
+                                        <label class="control-label">Dirección Comercial:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 2 -->
+                            <!--formulario row 2 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="pform.DirEstandar" class="form-control" placeholder="Dirección Estándar:">
+                                        <label class="control-label">Dirección Estándar:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="pform.DirNotif" class="form-control" placeholder="Dirección de notificación:">
+                                        <label class="control-label">Dirección de notificación:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 2 -->
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.Tels" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Teléfonos:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="mail" class="form-control" ng-model="pform.Mail" placeholder="E-mail:">
+                                        <label class="control-label-date">E-mail:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.Pagweb" placeholder="Página web:">
+                                        <label class="control-label-date">Página web:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <h2>Datos del propietario</h2>
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.TipoIdentProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Tipo de identificación del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.NoIdentProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Numero de identificación del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.IdentDVProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Identificación DV del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.ApellidosProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Apellidos del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.NombresProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Nombres del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.MatriculaProp" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Matricula del propietario:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <!--formulario row 2 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.TipoIdentRepl" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Tipo de Identificación del representante legal:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.NoIdentRepl" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Numero de identificación del representante legal:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 2 -->
+                            <!--formulario row 2 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.IdentDVRepl" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Identificación DV del representante legal:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="pform.ApellidosRepl" ng-required-err-type="isReq" required="required">
+                                        <label class="control-label">Apellidos del representante legal:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 2 -->
+                            <h2>Tipo de actividad</h2>
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.ciiu1" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">Código ciiu 1:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.ciiu2" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">Código ciiu 2:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.ciiu3" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">Código ciiu 3:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <!--formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.actividad_economica" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">Actividad Económica:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.localidad" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">Localidad:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" ng-model="pform.UPZ" ng-required-err-type="isReq" required="required">
+                                            <option value="1" selected>uno</option>
+                                            <option value="2">dos</option>
+                                            <option value="3">tres</option>
+                                            <option value="4">cuatro</option>
+                                            <option value="2">cinco</option>
+                                        </select>
+                                        <label class="control-label">UPZ:</label>
+                                        <i class="bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--fin formulario row 3 -->
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="submit" class="button full-width  button--efecto">Agregar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--fin del formulario -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+		<div class="col-lg-4 col-lg-offset-4">
+			<div class="btn-group">
+                <a href="" type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></a>
+                <a href="" class="btn btn-white">1</a>
+                <a href="" class="btn btn-white">2</a>
+                <a class="btn btn-white  active">3</a>
+                <a href="" class="btn btn-white">4</a>
+                <a href="" class="btn btn-white">5</a>
+                <a href="" type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i></a>
+            </div>
+		</div>
+	</div>-->
+</div>

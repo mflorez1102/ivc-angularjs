@@ -51,7 +51,6 @@ h5 {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #293846;
   color: white;
 }
 .nav .open > a,
@@ -161,14 +160,14 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background: url("patterns/header-profile.png") no-repeat;
+
 }
 .pace-done .nav-header {
   transition: all 0.4s;
 }
 .nav > li.active {
   border-left: 4px solid #2DA4DF;
-  background: #293846;
+  background: #2DA4DF;
 }
 .nav.nav-second-level > li.active {
   border: none;
@@ -260,12 +259,12 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   position: absolute;
   left: 70px;
   top: 0;
-  background-color: #2f4050;
+  background-color: #2DA4DF;
   padding: 10px 10px 10px 10px;
   font-size: 12px;
 }
 .canvas-menu.mini-navbar .nav-second-level {
-  background: #293846;
+  background: #2DA4DF;
 }
 .mini-navbar li.active .nav-second-level {
   left: 65px;
@@ -300,7 +299,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   font-weight: 600;
   color: white;
   display: none;
-  padding: 18px 0;
+  padding: 20px 0 17px 0;
 }
 .pace-done .navbar-static-side,
 .pace-done .nav-header,
@@ -3769,10 +3768,7 @@ code {
   background-color: #ffffff;
   color: inherit;
   padding: 15px 20px 20px 20px;
-  border-color: #e7eaec;
-  border-image: none;
-  border-style: solid solid none;
-  border-width: 1px 0;
+  
 }
 .ibox-footer {
   color: inherit;

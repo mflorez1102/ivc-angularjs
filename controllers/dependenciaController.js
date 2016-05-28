@@ -72,6 +72,13 @@ var dependenciaController = function($scope, $log, $resource, $state, $uibModal,
             $state.go("dependencias.lista", null, {reload: true});
         });        
     };
+    
+    $scope.eliminarModal = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'views/modal-eliminar.html',
+            controller: modalController,
+        });
+    };  
 
     $scope.dependencias = Dependencia.query();
 };

@@ -22,10 +22,14 @@
     <!-- Font awesome -->
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+
     <!-- Main Inspinia CSS files -->
     <link href="css/animate.css" rel="stylesheet">
     <link id="loadBefore" href="css/style.css" rel="stylesheet">
     <link id="loadBefore" href="css/style-ivc.css" rel="stylesheet">
+
 
 </head>
 
@@ -67,6 +71,16 @@
 <script src="js/angular-cache/dist/angular-cache.min.js" type="text/javascript" ></script>
 <script src="js/angular-messages/angular-messages.min.js" type="text/javascript" ></script>
 
+<!-- angular spinner -->
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/angular-spinner/angular-spinner.min.js"></script>
+<!-- ladda indicators -->
+<script src="bower_components/ladda/dist/ladda.min.js"></script>
+<script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+
+<!-- html form validation -->
+<script src="bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js" ></script>
+
 <!--
  You need to include this script on any page that has a Google Map.
  When using Google Maps on your own site you MUST signup for your own API key at:
@@ -90,6 +104,7 @@
 
 <!-- Controladores -->
 <script src="controllers/entidadController.js"></script>
+<script src="controllers/establecimientoController.js"></script>
 <script src="controllers/dependenciaController.js"></script>
 <script src="controllers/funcionarioController.js"></script>
 <script src="controllers/alarmaController.js"></script>
