@@ -1,6 +1,6 @@
 (function() {
 
-eliminarFuncionarioCtrl = function  ($scope, $uibModalInstance, $state, Dependencia, dep) {
+eliminarFuncionarioCtrl = function  ($scope, $uibModalInstance, $state, Dependencia, fun) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
@@ -19,7 +19,7 @@ function CrearFuncionarioCtrl ($scope, $log, $uibModalInstance, $state, Entidad,
     $scope.sendForm = function(){
         if($scope.mainForm.$valid){
             $log.info($scope.pform);
-            $response = Funcionario.save($scope.pform,function(msg){$log.info(msg);},function(msg){$log.info(msg);});
+            $response = Funcionario.save($scope.pform);
             $uibModalInstance.close();
             $state.go("funcionarios.lista", null, {reload: true});
         }
