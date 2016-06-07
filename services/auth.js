@@ -3,7 +3,7 @@
     var auth = function($http, CacheFactory){ 
 
         // Set up service authentication parameters
-        var base_url = "http://localhost:8000";
+        //var base_url = "http://localhost:8000";
         //var base_url = "https://enigmatic-waters-7832.herokuapp.com";
         
         // Crear cache

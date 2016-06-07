@@ -2,7 +2,7 @@
 * @Author: steve
 * @Date:   2016-04-10 17:06:45
 * @Last Modified by:   steve
-* @Last Modified time: 2016-05-12 06:06:29
+* @Last Modified time: 2016-06-07 10:18:06
 */
 (function() {
 
@@ -24,8 +24,9 @@ var loginController = function($scope, $log, $state, $resource, auth) {
             $response.then(function(result){
             	auth.loggedIn(result.id,result.userId);
             	$state.go("entidades.lista");
-            });
-            $scope.showMsg = true;
+            },function(result){
+                $scope.showMsg = true;
+            });            
         }else{
             angular.forEach($scope.mainForm.$error, function (field) {
                 angular.forEach(field, function(errorField){

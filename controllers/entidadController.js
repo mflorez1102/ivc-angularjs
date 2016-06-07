@@ -2,19 +2,25 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-05-15 22:35:11
+* @Last Modified time: 2016-06-07 10:41:11
 */
 
 (function() {
 
-modalController = function  ($scope, $uibModalInstance, $state, Entidad) {
-    
+eliminarController = function  ($scope, $uibModalInstance, $state, Entidad, ent) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
+
+    $scope.eliminar = function () {
+        $response = Entidad.remove({'id_entidad':ent.id},function(){
+            $uibModalInstance.close();
+            $state.go("entidades.lista", null, {reload: true});
+        });        
+    };
 };
 
-var CrearEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad) {
+var crearEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad) {
     $scope.pform = {};
     $scope.submitting = false;
 
@@ -28,12 +34,9 @@ var CrearEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad
     };
 
     var onError = function(err) {
-
         $log.info("ERROR: ");
         $log.info(err);
         $scope.submitting = false;
-        
-
     };
 
     $scope.sendForm = function(){
@@ -42,7 +45,6 @@ var CrearEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad
         Entidad.save($scope.pform)
             .$promise
             .then(onComplete, onError);
-
     };
 
     $scope.cancel = function () {
@@ -50,7 +52,7 @@ var CrearEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad
     };
 };
 
-var EditarEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad, ent) {
+var editarEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entidad, ent) {
 
     $scope.pform = ent;
     $scope.submitting = false;
@@ -65,12 +67,9 @@ var EditarEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entida
     };
 
     var onError = function(err) {
-
         $log.info("ERROR: ");
         $log.info(err);
         $scope.submitting = false;
-        
-
     };
 
     $scope.sendForm = function(){
@@ -79,13 +78,11 @@ var EditarEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entida
         Entidad.update($scope.pform)
             .$promise
             .then(onComplete, onError);
-
     };
 
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
-
 
     /*$scope.sendForm = function(){
         if($scope.mainForm.$valid){
@@ -95,7 +92,6 @@ var EditarEntidadCtrl = function($scope, $log, $uibModalInstance, $state, Entida
             });         
         }
     };*/
-
 };
 
 var entidadController = function($scope, $state, $log, $uibModal, auth, Entidad, $timeout) {
@@ -107,30 +103,27 @@ var entidadController = function($scope, $state, $log, $uibModal, auth, Entidad,
     $scope.crear = function () {
         var modalInstance = $uibModal.open({
             templateUrl: 'views/entidades/modals/crear.html',
-            controller: CrearEntidadCtrl
+            controller: crearEntidadCtrl
         });
     };
 
     $scope.editar = function (entidad) {
         var modalInstance = $uibModal.open({
             templateUrl: 'views/entidades/modals/editar.html',
-            controller: EditarEntidadCtrl,
+            controller: editarEntidadCtrl,
             resolve: {
                 ent: function () { return entidad; }
             }
         });
     };
 
-    $scope.eliminar = function (id) {
-        $response = Entidad.remove({'id_entidad':id},function(){
-            $state.go("entidades.lista", null, {reload: true});
-        });        
-    };
-
-    $scope.eliminarModal = function () {
+    $scope.eliminarModal = function (entidad) {
         var modalInstance = $uibModal.open({
-            templateUrl: 'views/modal-eliminar.html',
-            controller: modalController,
+            templateUrl: 'views/common/modal-eliminar.html',
+            controller: eliminarController,
+            resolve: {
+                ent: function () { return entidad; }
+            }
         });
     };
     $scope.entidades =[];
@@ -144,10 +137,8 @@ var entidadController = function($scope, $state, $log, $uibModal, auth, Entidad,
     };
 
     var onError = function(err) {
-
         $log.info("ERROR: ");
         $log.info(err);
-
     };
 
     // para la busqueda
