@@ -2,12 +2,12 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-06-07 10:41:11
+* @Last Modified time: 2016-06-07 10:55:56
 */
 
 (function() {
 
-eliminarController = function  ($scope, $uibModalInstance, $state, Entidad, ent) {
+eliminarEntidadCtrl = function  ($scope, $uibModalInstance, $state, Entidad, ent) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
@@ -98,8 +98,6 @@ var entidadController = function($scope, $state, $log, $uibModal, auth, Entidad,
 
     $log.info('---- entidadController ----- ');
 
-
-
     $scope.crear = function () {
         var modalInstance = $uibModal.open({
             templateUrl: 'views/entidades/modals/crear.html',
@@ -120,7 +118,7 @@ var entidadController = function($scope, $state, $log, $uibModal, auth, Entidad,
     $scope.eliminarModal = function (entidad) {
         var modalInstance = $uibModal.open({
             templateUrl: 'views/common/modal-eliminar.html',
-            controller: eliminarController,
+            controller: eliminarEntidadCtrl,
             resolve: {
                 ent: function () { return entidad; }
             }
