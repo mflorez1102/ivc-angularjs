@@ -1,0 +1,125 @@
+<div class="inmodal formulario">
+    <form name="mainForm" ng-submit="sendForm()" novalidate>
+        <div class="modal-header">
+           <button type="button" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <h4 class="modal-title">Editar Funcionario</h4>
+            <p>Edita los datos del funcionario.</p>
+            <i class="fa fa-user modal-icon"></i>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="nombre" ng-model="pform.nombre" class="form-control" required="required">
+                        <label class="control-label">Nombre:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="pform.apellido" class="form-control" required="required">
+                        <label class="control-label">Apellido:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="pform.email" class="form-control" required="required">
+                        <label class="control-label">E-mail:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password" ng-model="pform.password" class="form-control" required="required">
+                        <label class="control-label">Password:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password1" class="form-control" required="required">
+                        <label class="control-label">Repetir Password:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                       <select class="form-control" name="entidadId" ng-model="entidadId" ng-change="updateDependencia()">
+                            <option ng-value="opt.id" ng-repeat="opt in entidades">{{ opt.nombre }}</option>
+                        </select>
+                        <label class="control-label">Entidad:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <select class="form-control" name="dependenciaId" ng-model="pform.dependenciaId">
+                            <option ng-value="opt.id" ng-repeat="opt in dependencias">{{ opt.nombre }}</option>
+                        </select>
+                        <label class="control-label">Dependencia:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                   <div class="form-group">
+                       <select class="form-control" name="tipo_documento_identidad" ng-model="pform.tipo_documento_identidad">
+                            <option ng-value="opt.nombre" ng-repeat="opt in tipo_documento">{{ opt.nombre }}</option>
+                        </select>
+                        <label class="control-label">Tipo de documento:</label>
+                        <i class="bar"></i>
+                   </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="pform.documento_identidad" class="form-control" required="required">
+                        <label class="control-label">No. documento:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                       <div class="form-group">
+                       <select class="form-control" name="cargo" ng-model="pform.cargo">
+                            <option ng-value="opt.nombre" ng-repeat="opt in cargos">{{ opt.nombre }}</option>
+                        </select>
+                        <label class="control-label">Cargo:</label>
+                        <i class="bar"></i>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="pform.telefono_personal" class="form-control" required="required">
+                        <label class="control-label">Numero de celular:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="descripcion" ng-model="pform.telefono_oficina" class="form-control" required="required">
+                        <label class="control-label">Teléfono Oficina:</label>
+                        <i class="bar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6 col-md-offset-3" >
+                   <button type="submit" class="button full-width  button--efecto">Agregar</button>
+               </div>
+                
+            </div>
+        </div>
+        
+    </form>
+</div>

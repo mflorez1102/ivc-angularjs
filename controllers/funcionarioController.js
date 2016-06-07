@@ -1,6 +1,6 @@
 (function() {
 
-eliminarFuncionarioCtrl = function  ($scope, $uibModalInstance, $state, Dependencia, fun) {
+eliminarFuncionarioCtrl = function  ($scope, $uibModalInstance, $state, Funcionario, fun) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
