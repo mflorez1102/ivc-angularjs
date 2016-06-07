@@ -24,7 +24,7 @@
         <div class="row">
             <div class="form-group">
                 <select class="form-control" name="entidadId" ng-model="pform.entidadId" required="required">
-                    <option ng-value="opt.id" ng-repeat="opt in entidades" ng-selected="opt.id == dependencia.entidadId">{{ opt.nombre }}</option>
+                    <option ng-value="opt.id" ng-repeat="opt in entidades" ng-selected="opt.id == pform.entidadId">{{ opt.nombre }}</option>
                 </select>
                 <label class="control-label">Entidad:</label>
                 <div class="bar"></div>

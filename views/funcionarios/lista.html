@@ -13,7 +13,7 @@
 				<div class="ibox-content">
 					<div class="row">
 						<div class="col-sm-5 col-md-4 col-lg-3">
-							<a class="button-generic button--efecto" ng-click="funcionarioModal()">Agregar funcionario</a>
+							<a class="button-generic button--efecto" ng-click="open()">Agregar funcionario</a>
 						</div>
 						<div class="col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-3 col-lg-3 col-lg-offset-6">
 							<div class="input-group">
@@ -23,35 +23,41 @@
 						</div>
 					</div>
 					<br>
-					<div class="jqGrid_wrapper">
-                                <table id="tabla_productos"></table>
-                                <div id="pager_list_1"></div>
-                           </div>
 					<div class="table-responsive">
-						<table class="table table-striped" id="tabla_productos">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Nombre</th>
-									<th>Descripción</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="item in entidades" content="item">
-									<td>{{item.id}}</td>
-									<td>{{item.nombre}}</td>
-									<td>{{item.descripcion}}</td>
-									<td class="text-right">
-										<div class="btn-group">
-											<a class="btn-white btn btn-xs" href="">Editar</a>
-											<a class="btn-white btn btn-xs delete_item" href="">Eliminar</a>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                        <table class="table table-striped" id="tabla_productos">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Dependencia</th>
+                                    <th>Cargo</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in funcionarios" content="item">
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.apellido}}</td>
+                                    <td>{{item.dependencia.nombre}}</td>
+                                    <td>{{item.cargo}}</td>
+                                    <td class="text-center">
+                                       <div class="botones">
+                                            <button type="button" ng-click="editar(item)" class="btn boton-editar" aria-label="Left Align">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </button>
+                                            <button type="button" ng-click="eliminarModal(item)" class="btn boton-eliminar" aria-label="Left Align">
+                                                <i class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <!--<div class="btn-group">
+                                            <a class="btn-white btn btn-xs" ng-click="editar(item.id)">Editar</a>
+                                            <a class="btn-white btn btn-xs delete_item" ng-click="eliminar(item.id)">Eliminar</a>
+                                        </div>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 				</div>
 			</div>
 		</div>

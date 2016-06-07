@@ -2,7 +2,7 @@
 * @Author: steve
 * @Date:   2016-04-06 16:15:38
 * @Last Modified by:   steve
-* @Last Modified time: 2016-06-07 11:20:58
+* @Last Modified time: 2016-06-07 11:29:00
 */
 
 (function() {
@@ -40,7 +40,6 @@ function CrearDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Depen
 
 function EditarDependenciaCtrl ($scope, $uibModalInstance, $state, Entidad, Dependencia, dep) {
     $scope.pform = dep;
-    $scope.dependencia = dep;
 
     $scope.sendForm = function(){
         if($scope.mainForm.$valid){
@@ -97,7 +96,7 @@ var dependenciaController = function($scope, $log, $resource, $state, $uibModal,
 
     // Functions to handle promise
     var onComplete = function(data) {
-        $log.info("Entidad.query(): OK");
+        $log.info("Dependencia.query(): OK");
         $scope.dependencias = data;
         $scope.isLoading = false;        
     };
