@@ -59,8 +59,19 @@ function EditarFuncionarioCtrl ($scope, $uibModalInstance, $state, Entidad, Depe
         $uibModalInstance.dismiss('cancel');
     };
 
+    $scope.updateDependencia = function () {
+        $scope.dependencias = Dependencia.query({entidadId:$scope.entidadId});
+    }
+
+    $scope.tipo_documento = [
+        {nombre:"CC"},{nombre:"CE"},{nombre:"TI"}
+    ];
+    $scope.cargos = [
+        {nombre:"inspector"},{nombre:"admin"},{nombre:"secretaria"}
+    ];
+
     $scope.entidades = Entidad.query();
-    $scope.dependencias = Dependencia.query();
+    $scope.dependencias = {};
 };
 
 // Define controller function
